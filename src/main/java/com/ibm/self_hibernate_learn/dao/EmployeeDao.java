@@ -42,8 +42,34 @@ public class EmployeeDao {
 //	Delete Method
 	public boolean deleteEmployeeByIdDao(int empId) {
 		Employee emp = getEmployeeById(empId);
+		if(emp !=null) {
+			et.begin();
+			em.remove(emp);
+			et.commit();
+			return true;
+		}else {
+			return false;
+		}
 		
-		
+	}
+	
+//	UPDATE Method
+	public Employee updateEmployeeById(int empId, String name, String email, long phone) {
+		Employee emp = getEmployeeById(empId);
+		if(emp!=null) {
+			
+			emp.setName(name);
+			emp.setEmail(email);
+			emp.setPhone(phone);
+			
+			et.begin();
+			em.merge(emp);
+			et.commit();
+			
+			return emp;
+		}else {
+			return null;
+		}
 	}
 	
 	

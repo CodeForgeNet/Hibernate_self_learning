@@ -10,7 +10,7 @@ public class EmployeeInsertController {
 		EmployeeDao dao = new EmployeeDao();
 		
 //		INSERT
-//		Employee employee = new Employee(102,"arjun","arjun@gmail.com",587946621);
+//		Employee employee = new Employee(104,"Obito","obito@gmail.com",96325874);
 //		dao.saveEmployeeDao(employee);
 		
 		
@@ -25,8 +25,23 @@ public class EmployeeInsertController {
 		
 		
 //		DELETE
+//		boolean b = dao.deleteEmployeeByIdDao(103);
+//		if(b) {
+//			System.out.println("Data Deleted");
+//		}else {
+//			System.out.println("something went wrong please check the id....");			
+//		}
 		
 		
+		
+//		UPDATE
+		Employee upd = dao.updateEmployeeById(102, "rin", "rin@gmail.com", 75395146);
+		if(upd!=null) {
+			System.out.println(upd);
+			System.out.println("Data Updated");
+		}else {
+			System.out.println("Something went wrong , please check the id");
+		}
 		
 		
 		
